@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klear — Politique de confidentialité & Conditions d'utilisation</title>
+  <style>
+    :root {
+      --primary: #3B82F6;
+      --primary-light: #EFF6FF;
+      --text: #1E293B;
+      --text-secondary: #64748B;
+      --border: #E2E8F0;
+      --bg: #F8FAFC;
+      --white: #FFFFFF;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    header span {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ── Nav tabs ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      padding: 0 24px;
+      gap: 0;
+    }
+
+    nav button {
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    nav button.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* ── Content ── */
+    main {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+
+    section { display: none; }
+    section.active { display: block; }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-icon {
+      width: 40px; height: 40px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    p, li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    .highlight p {
+      color: #1D4ED8;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* ── Warning box ── */
+    .warning {
+      background: #FFF7ED;
+      border-left: 3px solid #F97316;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    .warning p {
+      color: #C2410C;
+      font-weight: 500;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    /* ── Meta ── */
+    .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--bg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 16px 0;
+    }
+
+    th {
+      background: var(--bg);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    td {
+      padding: 10px 14px;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    /* ── Contact chip ── */
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 0 16px 60px; margin-top: 24px; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Klear logo" />
+  </div>
+  <div>
+    <h1>Klear</h1>
+    <span>Documents légaux</span>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('privacy', this)">🔒 Politique de confidentialité</button>
+  <button onclick="showTab('terms', this)">📋 Conditions d'utilisation</button>
+</nav>
+
+<main>
+
+  <!-- ══════════════════════════════════════════════
+       POLITIQUE DE CONFIDENTIALITÉ
+  ══════════════════════════════════════════════ -->
+  <section id="privacy" class="active">
+
+    <div class="meta">
+      <span class="meta-item">📅 Dernière mise à jour : 20 mai 2025</span>
+      <span class="meta-item">🌍 Applicable : France & UE (RGPD)</span>
+      <span class="meta-item">📱 Application iOS : Klear</span>
+    </div>
+
+    <!-- Introduction -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">👋</div>
+        <h2>Introduction</h2>
+      </div>
+      <p>
+        Bienvenue sur <strong>Klear</strong>, l'application de soin personnalisé pour la peau, développée par
+        <strong>Bourbon Digital</strong>. Nous accordons la plus grande importance à la protection de tes données personnelles.
+      </p>
+      <p>
+        Cette politique de confidentialité décrit quelles données nous collectons, pourquoi, comment nous les utilisons
+        et quels sont tes droits en tant qu'utilisateur, conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong>.
+      </p>
+      <div class="highlight">
+        <p>💡 En utilisant Klear, tu acceptes les pratiques décrites dans cette politique. Si tu n'es pas d'accord, tu peux ne pas utiliser l'application.</p>
+      </div>
+    </div>
+
+    <!-- Responsable du traitement -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🏢</div>
+        <h2>Responsable du traitement</h2>
+      </div>
+      <table>
+        <tr><th>Entité</th><td>Bourbon Digital</td></tr>
+        <tr><th>Responsable</th><td>Stéphane (fondateur)</td></tr>
+        <tr><th>E-mail</th><td><a href="mailto:stephane@bourbon-digital.com">stephane@bourbon-digital.com</a></td></tr>
+        <tr><th>Application</th><td>Klear — iOS</td></tr>
+      </table>
+    </div>
+
+    <!-- Données collectées -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📦</div>
+        <h2>Données collectées</h2>
+      </div>
+
+      <h3>Données fournies volontairement</h3>
+      <ul>
+        <li><strong>Prénom</strong> — pour personnaliser ton expérience dans l'app</li>
+        <li><strong>Genre et tranche d'âge</strong> — pour adapter le programme</li>
+        <li><strong>Type de peau et préoccupations cutanées</strong> — acné, points noirs, rougeurs, etc.</li>
+        <li><strong>Habitudes de vie</strong> — sommeil, stress, alimentation, routines beauté passées</li>
+        <li><strong>Motivation</strong> — pourquoi tu souhaites améliorer ta peau</li>
+      </ul>
+
+      <h3>Photos de peau</h3>
+      <div class="warning">
+        <p>📸 Tes photos de peau sont capturées via la caméra et <strong>transmises à OpenAI</strong> pour l'analyse IA. Elles ne sont pas stockées sur nos serveurs. Voir la section OpenAI ci-dessous.</p>
+      </div>
+
+      <h3>Données techniques (collectées automatiquement)</h3>
+      <ul>
+        <li>Identifiant anonyme de l'appareil (pour les notifications locales)</li>
+        <li>Version de l'OS et du modèle d'iPhone</li>
+        <li>Logs d'erreurs anonymes (en cas de crash)</li>
+      </ul>
+
+      <p>Nous ne collectons <strong>pas</strong> : nom complet, numéro de téléphone, adresse postale, données bancaires ou localisation GPS.</p>
+    </div>
+
+    <!-- Finalités et base légale -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">⚖️</div>
+        <h2>Finalités et base légale (RGPD)</h2>
+      </div>
+      <table>
+        <tr>
+          <th>Finalité</th>
+          <th>Données concernées</th>
+          <th>Base légale</th>
+        </tr>
+        <tr>
+          <td>Personnaliser ton programme skincare</td>
+          <td>Profil cutané, réponses questionnaire</td>
+          <td>Exécution du contrat (Art. 6.1.b)</td>
+        </tr>
+        <tr>
+          <td>Analyse IA de ta peau via OpenAI</td>
+          <td>Photos de peau</td>
+          <td>Consentement explicite (Art. 6.1.a)</td>
+        </tr>
+        <tr>
+          <td>Suivi de ta progression</td>
+          <td>Score cutané, historique d'analyses</td>
+          <td>Exécution du contrat (Art. 6.1.b)</td>
+        </tr>
+        <tr>
+          <td>Notifications de rappel</td>
+          <td>Identifiant appareil</td>
+          <td>Consentement explicite (Art. 6.1.a)</td>
+        </tr>
+        <tr>
+          <td>Amélioration de l'application</td>
+          <td>Logs anonymes</td>
+          <td>Intérêt légitime (Art. 6.1.f)</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- OpenAI -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🤖</div>
+        <h2>Transfert vers OpenAI — Analyse IA</h2>
+      </div>
+      <p>
+        Pour analyser l'état de ta peau, Klear envoie ta photo à <strong>OpenAI (GPT-4o Vision)</strong>, un prestataire tiers basé aux États-Unis.
+      </p>
+      <h3>Ce qu'OpenAI reçoit</h3>
+      <ul>
+        <li>Ta photo de peau (encodée en base64, transmise via HTTPS chiffré)</li>
+        <li>Ton type de peau et tes principales préoccupations (contexte de l'analyse)</li>
+      </ul>
+      <h3>Ce qu'OpenAI ne reçoit pas</h3>
+      <ul>
+        <li>Ton prénom, ton identité ou toute information permettant de t'identifier personnellement</li>
+      </ul>
+      <div class="warning">
+        <p>🌍 Ce transfert implique un envoi hors UE (vers les serveurs d'OpenAI aux États-Unis). OpenAI est soumis aux <a href="https://openai.com/policies/privacy-policy" target="_blank">Standard Contractual Clauses</a> conformes au RGPD.</p>
+      </div>
+      <p>
+        Pour plus d'informations sur la gestion des données par OpenAI :
+        <a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/policies/privacy-policy</a>
+      </p>
+    </div>
+
+    <!-- Conservation -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🗄️</div>
+        <h2>Conservation des données</h2>
+      </div>
+      <table>
+        <tr><th>Type de données</th><th>Durée de conservation</th></tr>
+        <tr><td>Profil cutané et réponses</td><td>Durée d'utilisation de l'app + 12 mois après suppression</td></tr>
+        <tr><td>Photos de peau</td><td>Non stockées sur nos serveurs. Stockées localement sur ton iPhone uniquement.</td></tr>
+        <tr><td>Score et historique</td><td>Durée d'utilisation de l'app</td></tr>
+        <tr><td>Logs techniques anonymes</td><td>90 jours glissants</td></tr>
+      </table>
+    </div>
+
+    <!-- Tes droits -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🛡️</div>
+        <h2>Tes droits (RGPD)</h2>
+      </div>
+      <p>Conformément au RGPD, tu disposes des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> — obtenir une copie de tes données</li>
+        <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement</strong> — supprimer tes données ("droit à l'oubli")</li>
+        <li><strong>Droit d'opposition</strong> — t'opposer à certains traitements</li>
+        <li><strong>Droit à la portabilité</strong> — recevoir tes données dans un format structuré</li>
+        <li><strong>Droit de retrait du consentement</strong> — à tout moment, sans effet rétroactif</li>
+      </ul>
+      <div class="highlight">
+        <p>📧 Pour exercer tes droits, contacte-nous à : <strong>stephane@bourbon-digital.com</strong></p>
+      </div>
+      <p>Tu as également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank">cnil.fr</a></p>
+    </div>
+
+    <!-- Sécurité -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔐</div>
+        <h2>Sécurité</h2>
+      </div>
+      <ul>
+        <li>Toutes les communications sont chiffrées via <strong>HTTPS/TLS</strong></li>
+        <li>Les photos ne sont jamais stockées sur nos serveurs</li>
+        <li>Aucune donnée n'est revendue à des tiers à des fins publicitaires</li>
+        <li>L'accès aux données est limité au strict nécessaire (principe de minimisation)</li>
+      </ul>
+    </div>
+
+    <!-- Modifications -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔄</div>
+        <h2>Modifications de cette politique</h2>
+      </div>
+      <p>
+        Nous pouvons mettre à jour cette politique de confidentialité. En cas de modification substantielle,
+        nous t'en informerons via l'application. La date de dernière mise à jour est indiquée en haut de cette page.
+      </p>
+      <p>En continuant à utiliser Klear après une modification, tu acceptes la nouvelle politique.</p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       CONDITIONS D'UTILISATION
+  ══════════════════════════════════════════════ -->
+  <section id="terms">
+
+    <div class="meta">
+      <span class="meta-item">📅 Dernière mise à jour : 20 mai 2025</span>
+      <span class="meta-item">📱 Application iOS : Klear</span>
+      <span class="meta-item">🏢 Éditeur : Bourbon Digital</span>
+    </div>
+
+    <!-- Objet -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📋</div>
+        <h2>Objet et acceptation</h2>
+      </div>
+      <p>
+        Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation de l'application mobile
+        <strong>Klear</strong>, éditée par <strong>Bourbon Digital</strong>.
+      </p>
+      <p>
+        En téléchargeant, installant ou utilisant Klear, tu acceptes sans réserve les présentes CGU.
+        Si tu n'acceptes pas ces conditions, tu dois cesser d'utiliser l'application.
+      </p>
+      <div class="highlight">
+        <p>📌 L'utilisation de Klear est réservée aux personnes âgées d'au moins <strong>16 ans</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Description du service -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">✨</div>
+        <h2>Description du service</h2>
+      </div>
+      <p>Klear est une application de soin de la peau qui propose :</p>
+      <ul>
+        <li>Un <strong>programme skincare personnalisé</strong> basé sur un questionnaire et une analyse IA</li>
+        <li>Une <strong>analyse hebdomadaire de la peau</strong> via la caméra du téléphone et l'intelligence artificielle (OpenAI GPT-4o)</li>
+        <li>Un <strong>suivi de progression</strong> avec un score cutané évolutif</li>
+        <li>Des <strong>conseils coaching quotidiens</strong> personnalisés</li>
+        <li>Une <strong>bibliothèque de produits skincare</strong></li>
+      </ul>
+      <div class="warning">
+        <p>⚕️ Klear n'est pas un dispositif médical. Les résultats d'analyse et les recommandations sont <strong>indicatifs uniquement</strong> et ne constituent pas un diagnostic médical. Consulte un dermatologue pour tout problème de peau persistant.</p>
+      </div>
+    </div>
+
+    <!-- Accès et compte -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">👤</div>
+        <h2>Accès au service</h2>
+      </div>
+      <p>L'accès complet aux fonctionnalités de Klear nécessite :</p>
+      <ul>
+        <li>Un iPhone sous iOS 16 ou version ultérieure</li>
+        <li>Une connexion Internet pour l'analyse IA</li>
+        <li>L'autorisation d'accès à la caméra (pour l'analyse de la peau)</li>
+        <li>Un abonnement actif (voir section Abonnement)</li>
+      </ul>
+      <p>
+        Certaines fonctionnalités de base restent accessibles sans abonnement pendant la période d'onboarding.
+      </p>
+    </div>
+
+    <!-- Abonnement -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">💳</div>
+        <h2>Abonnement et paiement</h2>
+      </div>
+      <p>Klear propose les formules d'abonnement suivantes :</p>
+      <table>
+        <tr>
+          <th>Formule</th>
+          <th>Prix</th>
+          <th>Équivalent / semaine</th>
+        </tr>
+        <tr>
+          <td>Hebdomadaire</td>
+          <td>3,99 €/semaine</td>
+          <td>3,99 €/sem</td>
+        </tr>
+        <tr>
+          <td>Mensuel</td>
+          <td>12,99 €/mois</td>
+          <td>3,25 €/sem</td>
+        </tr>
+        <tr>
+          <td>Annuel</td>
+          <td>49,99 €/an</td>
+          <td>0,96 €/sem</td>
+        </tr>
+      </table>
+
+      <h3>Conditions de l'abonnement</h3>
+      <ul>
+        <li>Les paiements sont gérés par <strong>Apple App Store</strong> via les achats intégrés (In-App Purchase)</li>
+        <li>L'abonnement se renouvelle automatiquement sauf résiliation au moins 24h avant la fin de la période en cours</li>
+        <li>La résiliation se fait dans les réglages de ton compte Apple ID : <em>Réglages → [ton nom] → Abonnements</em></li>
+        <li>Aucun remboursement n'est accordé pour la période en cours, sauf cas prévu par Apple</li>
+      </ul>
+
+      <div class="highlight">
+        <p>💡 Si le programme Klear n'a pas produit de résultats visibles après utilisation complète et régulière, contacte-nous — nous examinerons ta demande de remboursement au cas par cas.</p>
+      </div>
+    </div>
+
+    <!-- Utilisation acceptable -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">✅</div>
+        <h2>Utilisation acceptable</h2>
+      </div>
+      <p>Tu t'engages à utiliser Klear uniquement à des fins personnelles et non commerciales, et à :</p>
+      <ul>
+        <li>Fournir des informations exactes lors du questionnaire</li>
+        <li>Ne pas tenter de contourner les mécanismes de paiement</li>
+        <li>Ne pas utiliser l'application à des fins illicites ou contraires aux bonnes mœurs</li>
+        <li>Ne pas tenter d'extraire, reproduire ou revendre le contenu de l'application</li>
+        <li>Ne pas soumettre de photos de personnes autres que toi-même</li>
+      </ul>
+    </div>
+
+    <!-- Propriété intellectuelle -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">©️</div>
+        <h2>Propriété intellectuelle</h2>
+      </div>
+      <p>
+        Tous les éléments de Klear (design, code, algorithmes, contenu éditorial, marque "Klear") sont la propriété exclusive de
+        <strong>Bourbon Digital</strong> et sont protégés par le droit de la propriété intellectuelle.
+      </p>
+      <p>
+        Toute reproduction, distribution ou exploitation sans autorisation écrite préalable est strictement interdite.
+      </p>
+    </div>
+
+    <!-- Limitation de responsabilité -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">⚠️</div>
+        <h2>Limitation de responsabilité</h2>
+      </div>
+      <ul>
+        <li>Klear est fourni <strong>"tel quel"</strong>, sans garantie de résultats spécifiques</li>
+        <li>Les recommandations de l'IA sont générées automatiquement et <strong>ne remplacent pas un avis médical</strong></li>
+        <li>Bourbon Digital ne peut être tenu responsable de réactions cutanées liées à l'utilisation de produits recommandés</li>
+        <li>En cas d'interruption temporaire du service (maintenance, pannes), aucune compensation n'est due pour les abonnements en cours</li>
+        <li>La précision de l'analyse IA dépend de la qualité de la photo soumise et de l'exactitude des réponses au questionnaire</li>
+      </ul>
+    </div>
+
+    <!-- Résiliation -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔚</div>
+        <h2>Résiliation et suppression du compte</h2>
+      </div>
+      <p>Tu peux à tout moment :</p>
+      <ul>
+        <li><strong>Résilier ton abonnement</strong> via les réglages de ton compte Apple ID</li>
+        <li><strong>Supprimer l'application</strong> de ton iPhone — toutes les données locales seront effacées</li>
+        <li><strong>Demander la suppression de tes données</strong> en nous contactant à <a href="mailto:stephane@bourbon-digital.com">stephane@bourbon-digital.com</a></li>
+      </ul>
+      <p>
+        Nous nous réservons le droit de suspendre ou résilier l'accès en cas de violation des présentes CGU.
+      </p>
+    </div>
+
+    <!-- Droit applicable -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🏛️</div>
+        <h2>Droit applicable et litiges</h2>
+      </div>
+      <p>
+        Les présentes CGU sont soumises au <strong>droit français</strong>. En cas de litige, une solution amiable sera recherchée en priorité.
+      </p>
+      <p>
+        À défaut d'accord amiable, les tribunaux français compétents seront saisis.
+        Tu peux également recourir à un médiateur de la consommation conformément à la directive européenne 2013/11/UE.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📬</div>
+        <h2>Contact</h2>
+      </div>
+      <p>Pour toute question relative à ces conditions :</p>
+      <a href="mailto:stephane@bourbon-digital.com" class="contact-chip">
+        📧 stephane@bourbon-digital.com
+      </a>
+      <p style="margin-top: 16px;">Nous nous engageons à répondre dans un délai de <strong>5 jours ouvrables</strong>.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Bourbon Digital — Klear iOS App</p>
+  <p style="margin-top: 4px;">Ces documents sont conformes au RGPD et aux exigences de l'App Store d'Apple.</p>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
